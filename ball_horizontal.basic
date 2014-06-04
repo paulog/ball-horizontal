@@ -1,14 +1,17 @@
 0 rem !to "build/ball-horizontal.prg"
+10 rem initialize variables
+20 s=1024
+30 b=81:rem "ball" code
+40 x=0:y=0:ox=0:oy=0:rem starting coordinate
+50 dx=1:rem how much i want to change x (delta x)
+55 dy=1:rem how much i want to change x (delta x)
+60 mx=39:rem right edge of screen
+60 my=24:rem bottom edge of screen
 100 rem 1. place the ball in the starting position
-110 s=1024
-115 b=81:rem "ball" code
-116 x=0:y=0:ox=0:oy=0:rem starting coordinate
-117 dx=1:rem how much i want to change x (delta x)
-118 mx=39:rem right edge of screen
 120 poke s+(40*oy)+ox,32:rem erase dot
 125 poke s+(40*y)+x,b:rem draw dot
 200 rem 2. move the ball on the screen (initially to the right)
-205 ox=x:oy=y
+105 ox=x:oy=y
 210 x=x+dx
 300 rem 3. if ball hits the edge of the screen, change direction
 310 if x=mx then dx=-dx 
